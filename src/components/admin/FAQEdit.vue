@@ -1,0 +1,107 @@
+<template>
+  <div class="col s12 m6">
+    <div>
+      <div class="page-subtitle">
+        <h4>Редактирование FAQ</h4>
+      </div>
+      <form class="form" @submit.prevent="onSubmit">
+
+    <div class="input-field">
+      <input
+          @keyup.enter="onKeyup"
+          id="question-edit"
+          type="text"
+          v-model.trim="faq.title"
+          :class="{invalid: !$v.faq.title.required && $v.faq.title.$dirty}"
+      >
+      <label for="question-edit">Вопрос</label>
+      <span
+          v-if="!$v.faq.title.required && $v.faq.title.$dirty"
+          class="helper-text invalid">Поле не может быть пустым</span>
+    </div>
+
+    <div class="input-field">
+      <input
+          @keyup.enter="onKeyup"
+          id="answer-edit"
+          type="text"
+          v-model.trim="faq.description"
+          :class="{invalid: !$v.faq.description.required && $v.faq.description.$dirty}"
+      >
+      <label for="answer-edit">Ответ</label>
+      <span
+          v-if="!$v.faq.description.required && $v.faq.description.$dirty"
+          class="helper-text invalid">Поле не может быть пустым</span>
+    </div>
+
+    <button class="btn waves-effect waves-light" type="submit">
+      Обновить
+      <i class="material-icons right">send</i>
+    </button>
+
+  </form>
+    </div>
+  </div>
+</template>
+
+<script>
+import {required} from "vuelidate/lib/validators";
+
+export default {
+  name: "FAQEdit",
+  props: {
+    value: {
+      type: Object
+    }
+  },
+  data: () => ({
+    faq: {
+      title: ' ',
+      description: ' '
+    }
+  }),
+  validations: {
+    faq: {
+      title: {required},
+      description: {required}
+    }
+  },
+  methods: {
+    onSubmit() {
+      if (this.$v.$invalid) {
+        this.$v.$touch()
+        return
+      }
+
+      this.$store.dispatch('editFAQ', this.faq).then(() => {
+        this.$store.dispatch('getFAQ')
+        this.faq = {
+          title: ' ',
+          description: ' '
+        }
+        this.$v.$reset()
+      }).then(() => {
+        this.$store.dispatch('getFAQ')
+      }).catch(err => {
+        console.log(err)
+      })
+    },
+    onKeyup() {
+      this.faq.title = ' '
+      this.faq.description = ' '
+    }
+  },
+  watch: {
+    value () {
+      this.faq = this.value
+    }
+  },
+  mounted() {
+    M.updateTextFields()
+  }
+}
+</script>
+
+<style scoped>
+
+</style>

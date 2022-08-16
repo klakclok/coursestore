@@ -32,6 +32,13 @@
                     </div>
                 </div>
             </section>
+<<<<<<< Updated upstream
+=======
+            <transition name="slide-fade">
+                <FormBuy  v-model="requestVisible" @request="showRequest"/>
+            </transition>
+            
+>>>>>>> Stashed changes
             <section class="what-learn">
                     <div class="what-learn__container">
                         <div class="what-learn__content">
@@ -144,7 +151,23 @@
 import ProgramCourse from '@/components/programCourse.vue';
     export default {
     name: "coursePage",
+<<<<<<< Updated upstream
     components: { ProgramCourse }
+=======
+    components: { 
+        ProgramCourse,
+        FormBuy },
+    data(){
+        return{
+            requestVisible: false
+        }
+    },
+    methods:{
+        showRequest(request){
+            this.requestVisible = request;
+        }
+    }
+>>>>>>> Stashed changes
 }
 </script>
 <style lang="scss" scoped>
@@ -279,7 +302,27 @@ section{
     border-radius: 10px;
     padding: 20px 50px;
     color: #FFFFFF;
+<<<<<<< Updated upstream
     transition: background-color 0.3s ease 0s;
+=======
+    z-index: 499;
+    cursor: pointer;
+    transition-duration:0,5s ;
+}
+.button:hover{
+    background:linear-gradient(90deg,#ea1414,#7004a7);;
+}
+.slide-fade-enter-active {
+  transition: all .7s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active до версии 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+>>>>>>> Stashed changes
 }
 // section two
 .what-learn{
@@ -461,6 +504,139 @@ h3{
 .footer_contacts_content_social {
     display: flex;
     gap: 24px;
+<<<<<<< Updated upstream
+=======
+    
+}
+.contacts {
+}
+@media(max-width:390px){
+    .footer_content{
+        gap: 40px;
+        margin-bottom: 313px;
+        
+    }
+    .block-learn__list{
+        gap: 70px;
+    }
+    .list{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%; 
+        width: 280px;
+    }
+    .footer_contacts_content{
+        flex-direction: column-reverse;
+        margin-bottom: 0px;
+    }
+    .footer_contacts_content_social{
+        margin-bottom: 29px;
+    }
+    
+}
+@media(max-width:1050px){
+    h2{
+        font-size: 30px;
+        line-height: 36px;
+        margin-bottom: 30px;
+    }
+    
+}
+
+
+@media (max-width:1230px){
+    .header{
+        display: none;
+    }
+    .get-start__content{
+        flex-direction: column-reverse;
+    }
+    
+    .get-started__image{
+        margin-top: -45px;
+    }
+    .name-academy{
+        padding-top: 23px;
+    }
+    // .what-learn__content{
+    //     flex-direction: column;
+    // }
+    // .block-learn__list{
+    //     flex-direction: column;
+    // }
+    .who-course__blocks{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .who-course__text{
+        margin: 0 auto;
+        width: 100%;
+        display: block;
+    }
+}
+@media (max-width:500px){
+    .block-learn__title{
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 36px;
+        width: 165px;
+    }
+    .what-learn{
+        margin-top: 50px;
+    }
+    
+}
+@media (max-width:770px){
+    .block-learn__list{
+        flex-direction: column;
+    }
+}
+@media (max-width:710px){
+    .get-started__image img{
+        width: 450px;
+        height: auto;
+        
+    }
+    .get-started__image{
+        margin-top: -50px;
+    }
+}
+@media (max-width:470px){
+    .get-started__image img{
+        width: 350px;
+        height: auto;
+        
+    }
+    .get-started__image{
+        margin-top: -50px;
+    }
+    .block-text__title{
+        font-size: 40px;
+        line-height: 45px;
+    }
+    .block-text__text{
+        font-size: 20px;
+        line-height: 140%;
+    }
+}
+@media (max-width:360px){
+    .get-started__image img{
+        width: 250px;
+        height: auto;
+        
+    }
+    .get-started__image{
+        margin-top: -50px;
+    }
+    .block-text__title{
+        font-size: 30px;
+        line-height: 36px;
+    }
+    .block-text__text{
+        font-size: 16px;
+        line-height: 140%;
+    }
+>>>>>>> Stashed changes
 }
 
 

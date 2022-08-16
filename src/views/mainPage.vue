@@ -8,7 +8,7 @@
                         <p class="main_screen_colum_subtitle">Единственная образовательная онлайн-площадка для лекций, курсов, мастер-классов от мусульман для мусульман, а также единственное в своем роде место знакомства и обмена знаниями в сфере исламской тематики, арабистики и востоковедения.</p>
                         <div class="main_screen_statistics">
                     <div class="main_screen_statistics_inform">
-                        <div class="main_screen_statistics_inform_number">{{users}}</div>
+                        <div class="main_screen_statistics_inform_number">{{info}}</div>
                         <div class="main_screen_statistics_inform_text">Пользователей</div>
                     </div>
                     <div class="main_screen_statistics_inform">
@@ -51,7 +51,7 @@
         <div class="questions">
             <div class="conteiner">
                 <h2>Часто задаваемые вопросы</h2>
-                <QuestionsFaqs />
+                <FaqsList :faqs="faqs" />
             </div>
         </div>
         <div class="footer">
@@ -107,6 +107,7 @@
 
 <script>
 import CardCourse from "@/components/cardCourse.vue";
+<<<<<<< Updated upstream
 import QuestionsFaqs from "@/components/questionsFaqs.vue";
 
     export default{
@@ -118,14 +119,65 @@ import QuestionsFaqs from "@/components/questionsFaqs.vue";
         data(){
             return{
                 users: 3000
+=======
+import SwiperMain from "@/components/swiperMain.vue";
+import axios from "axios"
+import FaqsList from "@/components/faqsList.vue";
+    export default{
+        name: 'mainPage',
+        components:{
+    CardCourse,
+    SwiperMain,
+    FaqsList
+},
+        data(){
+            return{
+                info: null ,
+                cards: [],
+                faqs:[]
+>>>>>>> Stashed changes
             }
-        }
+        },
+        mounted(){
+            axios({
+                url: 'http://academy/api/courses',
+                method: "GET",
+                
+            }).then((response) => {
+                this.cards=response.data
+            }).catch((err) => {
+                console.log(err)
+            }),
+            axios({
+                url: 'http://academy/api/faq',
+                method: "GET",
+                
+            }).then((response) => {
+                this.faqs=response.data
+            }).catch((err) => {
+                console.log(err)
+            }),
+            axios({
+                url: 'http://academy/api/info',
+                method: "GET",
+                
+            }).then((response) => {
+                this.info=response.data[0].users
+            }).catch((err) => {
+                console.log(err)
+            })
+        },
+        
     }
 </script>
 
 
+<<<<<<< Updated upstream
 
 <style scoped>
+=======
+<style lang="scss" scoped>
+>>>>>>> Stashed changes
 .conteiner{
     max-width: 1440px;
     margin: 0 auto;
@@ -136,7 +188,8 @@ a{
     color: black;
 }
 h2{
-    margin-top: 100px;
+    margin-top: 20px;
+    margin-bottom: 40px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
