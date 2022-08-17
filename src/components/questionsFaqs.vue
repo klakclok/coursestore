@@ -10,7 +10,7 @@
                     <p>{{faq.description}}</p> 
                 </div>
             </div>
-<<<<<<< Updated upstream
+
 
             <div class="questions-item">
                 <input class="questions-item__input" type="checkbox" id="question-2">
@@ -21,8 +21,7 @@
                     <p>The navigation design should communicate the relationship between the links it contains so that users understand the options they have for navigating the site.</p> 
                 </div>
             </div>
-=======
->>>>>>> Stashed changes
+
         </div>
     </div> 
 </template>
@@ -72,13 +71,13 @@
     font-size: 20px;
     line-height: 34px; */
     border-bottom: 1px solid #E5E5E5;
-<<<<<<< Updated upstream
+
     cursor: pointer;
     
-=======
+
     padding-right: 26px;
     cursor: pointer;
->>>>>>> Stashed changes
+
 }
 .questioan-item__trigger p{
     font-family: 'Inter';

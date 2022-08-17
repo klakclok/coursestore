@@ -1,7 +1,7 @@
 <template>
-    <div id="card">
+    
         <div class="card">
-<<<<<<< Updated upstream
+
             <div class="card_content">
                 <img class="card_content_image" src="../assets/img1.png" alt="">
                 <span class="card_button" href="">Программирование</span>
@@ -9,14 +9,13 @@
                 <p class="card_content_subtitle">Вы научитесь делать веб-сайты, разрабатывать удобные интерфейсы и решать проблемы пользователей.</p>
                 <p class="card_content_price">10 000 ₽</p>
                 
-=======
+
             <div class="card_content" >
                 <img class="card_content_image"  :src="this.$store.getters.getHost + card.head_img.img.path" :alt="card.title">
                 <span class="card_button" href="">{{card.category}}</span>
                 <router-link to="/coursePage" class="card_content_title">{{card.title}}</router-link>
                 <p class="card_content_subtitle">{{card.description}}</p>
                 <p class="card_content_price">{{card.price}} <span>&#8381;</span> </p>
->>>>>>> Stashed changes
             </div>
         </div>
     </div>
@@ -25,9 +24,7 @@
 
 <script>
     export default{
-<<<<<<< Updated upstream
-        name: 'cardCourse'
-=======
+
         name: 'cardCourse',
         props:{
             card:{  
@@ -35,7 +32,7 @@
                 required: true,
             }
         }
->>>>>>> Stashed changes
+
     }
 </script>
 
@@ -67,12 +64,12 @@
 .card_content_image{
     /* margin-right: 17px; */
     /* width: 305px; */
-<<<<<<< Updated upstream
+
     height: auto;
-=======
+
     width: 305px;
     height: 250px;
->>>>>>> Stashed changes
+
     /* background: url(../assets/img1.png) 50% no-repeat; */
     border-radius: 10px;
     margin-bottom: 16px;

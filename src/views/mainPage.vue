@@ -43,15 +43,13 @@
         <div class="course">
             <div class="conteiner">
                 <h2>Курсы</h2>
-                <div class="course_card">
-                </div>
-                <cardCourse />
+                <SwiperMain :cards="cards" />
             </div>
         </div>
         <div class="questions">
             <div class="conteiner">
                 <h2>Часто задаваемые вопросы</h2>
-                <FaqsList :faqs="faqs" />
+                <faqsList :faqs="faqs" />
             </div>
         </div>
         <div class="footer">
@@ -107,40 +105,27 @@
 
 <script>
 import CardCourse from "@/components/cardCourse.vue";
-<<<<<<< Updated upstream
-import QuestionsFaqs from "@/components/questionsFaqs.vue";
-
-    export default{
-        name: 'mainPage',
-        components:{
-            CardCourse,
-            QuestionsFaqs
-        },
-        data(){
-            return{
-                users: 3000
-=======
 import SwiperMain from "@/components/swiperMain.vue";
-import axios from "axios"
-import FaqsList from "@/components/faqsList.vue";
+import faqsList from "@/components/faqsList";
+import axios from "axios";
     export default{
         name: 'mainPage',
         components:{
     CardCourse,
     SwiperMain,
-    FaqsList
+    faqsList,
+    
 },
         data(){
             return{
                 info: null ,
                 cards: [],
                 faqs:[]
->>>>>>> Stashed changes
             }
         },
         mounted(){
             axios({
-                url: 'http://academy/api/courses',
+                url: 'http://8bit.comrades.dev/api/courses',
                 method: "GET",
                 
             }).then((response) => {
@@ -149,7 +134,7 @@ import FaqsList from "@/components/faqsList.vue";
                 console.log(err)
             }),
             axios({
-                url: 'http://academy/api/faq',
+                url: 'http://8bit.comrades.dev/api/faq',
                 method: "GET",
                 
             }).then((response) => {
@@ -158,7 +143,7 @@ import FaqsList from "@/components/faqsList.vue";
                 console.log(err)
             }),
             axios({
-                url: 'http://academy/api/info',
+                url: 'http://8bit.comrades.dev/api/info',
                 method: "GET",
                 
             }).then((response) => {
@@ -172,12 +157,11 @@ import FaqsList from "@/components/faqsList.vue";
 </script>
 
 
-<<<<<<< Updated upstream
 
-<style scoped>
-=======
+
+
+
 <style lang="scss" scoped>
->>>>>>> Stashed changes
 .conteiner{
     max-width: 1440px;
     margin: 0 auto;

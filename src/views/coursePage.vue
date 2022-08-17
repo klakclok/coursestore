@@ -32,13 +32,11 @@
                     </div>
                 </div>
             </section>
-<<<<<<< Updated upstream
-=======
+
             <transition name="slide-fade">
                 <FormBuy  v-model="requestVisible" @request="showRequest"/>
             </transition>
             
->>>>>>> Stashed changes
             <section class="what-learn">
                     <div class="what-learn__container">
                         <div class="what-learn__content">
@@ -151,9 +149,6 @@
 import ProgramCourse from '@/components/programCourse.vue';
     export default {
     name: "coursePage",
-<<<<<<< Updated upstream
-    components: { ProgramCourse }
-=======
     components: { 
         ProgramCourse,
         FormBuy },
@@ -167,7 +162,7 @@ import ProgramCourse from '@/components/programCourse.vue';
             this.requestVisible = request;
         }
     }
->>>>>>> Stashed changes
+
 }
 </script>
 <style lang="scss" scoped>
@@ -302,9 +297,7 @@ section{
     border-radius: 10px;
     padding: 20px 50px;
     color: #FFFFFF;
-<<<<<<< Updated upstream
     transition: background-color 0.3s ease 0s;
-=======
     z-index: 499;
     cursor: pointer;
     transition-duration:0,5s ;
@@ -322,7 +315,6 @@ section{
 /* .slide-fade-leave-active до версии 2.1.8 */ {
   transform: translateX(10px);
   opacity: 0;
->>>>>>> Stashed changes
 }
 // section two
 .what-learn{
@@ -504,8 +496,6 @@ h3{
 .footer_contacts_content_social {
     display: flex;
     gap: 24px;
-<<<<<<< Updated upstream
-=======
     
 }
 .contacts {
@@ -636,7 +626,6 @@ h3{
         font-size: 16px;
         line-height: 140%;
     }
->>>>>>> Stashed changes
 }
 
 

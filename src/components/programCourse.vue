@@ -162,7 +162,6 @@ export default {
   background: #FFFFFF;
   border: 1px solid #E0E0E0;
   border-radius: 15px;
-  
   margin: 0 auto;
   font-family: 'Inter';
 }
@@ -191,13 +190,13 @@ export default {
 }
 .header-info__sections {
   position: relative;
-<<<<<<< Updated upstream
-=======
+
+
   font-family: 'Inter';
   font-weight: 500;
 font-size: 18px;
 line-height: 140%;
->>>>>>> Stashed changes
+
 }
 .header-info__sections:before {
   position: absolute;
@@ -207,15 +206,14 @@ line-height: 140%;
 }
 .header-info__lectures {
   position: relative;
-<<<<<<< Updated upstream
-=======
+
   font-family: "Inter";
   
   font-weight: 500;
 font-size: 18px;
 line-height: 140%;
   
->>>>>>> Stashed changes
+
 }
 .header-info__lectures:before {
   position: absolute;
@@ -265,13 +263,12 @@ line-height: 140%;
   overflow: hidden;
   border: 1px solid #E0E0E0;
   padding: 0 50px;
-<<<<<<< Updated upstream
+
   &-label {
     position: relative;
     font-weight: 600;
     font-size: 1.4em;
     line-height: 1.2em;
-=======
   font-family: 'Inter';
   font-style: normal;
   
@@ -281,7 +278,7 @@ line-height: 140%;
     font-weight: 500;
     font-size: 20px;
     line-height: 34px;
->>>>>>> Stashed changes
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -312,8 +309,7 @@ line-height: 140%;
       list-style-position: inside;
       &-item {
         margin-bottom: 20px;
-<<<<<<< Updated upstream
-=======
+
         font-family: 'Inter';
         font-style: normal;
         font-weight: 400;
@@ -324,7 +320,7 @@ line-height: 140%;
 
         color: #000000;
 
->>>>>>> Stashed changes
+      }
         &:last-child {
           margin-bottom: 30px;
         }
