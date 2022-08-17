@@ -12,15 +12,6 @@
             </div>
 
 
-            <div class="questions-item">
-                <input class="questions-item__input" type="checkbox" id="question-2">
-                <label class="questioan-item__trigger" for="question-2">
-                    <p>Где находится кнопка удаления аккаунта?</p>
-                </label>
-                <div class="questioan-item__content">
-                    <p>The navigation design should communicate the relationship between the links it contains so that users understand the options they have for navigating the site.</p> 
-                </div>
-            </div>
 
         </div>
     </div> 

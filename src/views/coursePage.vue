@@ -23,7 +23,7 @@
                             <div class="get-started__block-text block-text">
                                 <h1 class="block-text__title">Профессия <br> Менеджер  проектов</h1>
                                 <div class="block-text__text">Научитесь управлять бюджетом, сроками и <br> командой, применять Agile-подход, <br> Scrum-фреймворк и методологию Double <br> Diamond. Пополните портфолио сильным кейсом <br> и найдёте высокооплачиваемую работу.</div>
-                                <button href="#" class="block-text__button button">Купить - 10 250₽</button>
+                                <button  class="block-text__button button" @click="showRequest">Купить - 10 250₽</button>
                                 </div>
                             </div>
                         <div class="get-started__image">
@@ -147,6 +147,7 @@
 
 <script>
 import ProgramCourse from '@/components/programCourse.vue';
+import FormBuy from '@/components/formBuy';
     export default {
     name: "coursePage",
     components: { 
@@ -160,7 +161,8 @@ import ProgramCourse from '@/components/programCourse.vue';
     methods:{
         showRequest(request){
             this.requestVisible = request;
-        }
+        },
+        
     }
 
 }
@@ -171,15 +173,16 @@ a {
     text-decoration: none
 }
 [class*="__container"] {
-    max-width: 1438px;
-    margin: 0px auto;
+    max-width: 1440px;
+    margin: 0 auto;
     padding: 0 20px;
-    position: relative;
+    overflow: hidden;
 }
 .main{
     flex: 1 1 auto;
     position: relative;
-    
+    min-height: 100%;
+    overflow: hidden;
 }
 section{
     display: block;
@@ -213,6 +216,9 @@ section{
 
     color: #FFF;
 }
+.main{  
+    width: 100%;
+}
 .course-page{
     overflow: hidden;
     display: flex;
@@ -223,12 +229,12 @@ section{
     position: relative;
     background-color: #101010;
     background-size: cover;
-    height: 728px;
+    padding-bottom: 20px;
 }
 .name-academy{
     display: flex;
-    align-items: center;
-    padding: 70px 0px 40px 0px;
+    
+    padding: 100px 0px 20px 0px;
 }
 .logo{
     width: 50px;
@@ -251,18 +257,15 @@ section{
 }
 .block-text__text:not(:last-child) {
     margin: 0px 0px 40px 0px;
+    max-width: 550px;
 }
 .get-start__content{
-    
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    position: relative;
+    justify-content: space-between;
+
 }
 .get-started__image{
-    position: absolute;
-    padding-left: 654px;
-    margin-top: -20px;
+    margin-top: -170px;
 }
 .block-text__title{
     font-family: 'Inter';
@@ -285,8 +288,10 @@ section{
 
     color: #FFFFFF;
 }
+
 .button{
-    display: inline-block;
+    position: relative;
+    display: block;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -297,16 +302,14 @@ section{
     border-radius: 10px;
     padding: 20px 50px;
     color: #FFFFFF;
-    transition: background-color 0.3s ease 0s;
-    z-index: 499;
+    z-index: 1000;
     cursor: pointer;
-    transition-duration:0,5s ;
 }
 .button:hover{
-    background:linear-gradient(90deg,#ea1414,#7004a7);;
+        background: linear-gradient(90deg,#ea1414,#7004a7);
 }
 .slide-fade-enter-active {
-  transition: all .7s ease;
+  transition: all .3s ease;
 }
 .slide-fade-leave-active {
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
@@ -319,10 +322,11 @@ section{
 // section two
 .what-learn{
     margin-top: 130px ;
-    height: 500px;
+    // height: 500px;
 }
 .what-learn__content{
     display: flex;
+    flex-wrap: wrap;
 }
 ul{
     list-style-type:none;    
@@ -334,22 +338,24 @@ ul{
     font-size: 48px;
     line-height: 58px;
     color: #000000;
+    margin-bottom: 80px;
 
 }
 
 .block-learn__list{
     width: 816px;
-    height: 400px;
+    // height: 400px;
     position: relative;
     display: flex;
-    padding-top: 86px;
+    // padding-top: 86px;
     flex-wrap: wrap;
     gap: 80px;
+    margin-bottom: 30px;
 }
 .list{
     display: block;
     width: 346px;
-    height: 135px;
+    // height: 135px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -373,6 +379,7 @@ ul{
     border-radius: 15px;
     background: #FFFFFF;
 }
+
 .what-learn-wraper-title{
     font-family: 'Inter';
     font-style: normal;
@@ -391,6 +398,7 @@ ul{
     padding-left: 30px;
     padding-bottom: 30px;
 }
+
 .skills__list{
     font-family: 'Inter';
     font-style: normal;
@@ -411,6 +419,7 @@ ul{
 
 //section four
 .who-course{
+    margin-bottom: 91px;
     margin-top: 130px;
 }
 .who-course__title{
@@ -424,9 +433,9 @@ ul{
 .who-course__blocks{
     display:flex;
     text-align: center;
+    justify-content: space-between;
 }
 .who-course__block{
-    padding-right: 125px;
 
     img{
         height: 200px;
@@ -450,16 +459,67 @@ ul{
     
 }
 
-.footer{
-    margin-top: 300px;
-    border-top: 1px solid #E8E8E8;
+// .footer{
+//     margin-top: 300px;
+//     border-top: 1px solid #E8E8E8;
 
+// }
+
+// .footer_content {
+//     display: flex;
+//     gap: 108px;
+//     margin-top: 60px;
+// }
+// h3{
+//     font-family: 'Inter';
+//     font-style: normal;
+//     font-weight: 700;
+//     font-size: 18px;
+//     line-height: 32px;
+//     margin-bottom: 24px;
+// }
+// .footer_content_colum_item{
+//     font-family: 'Inter';
+//     font-style: normal;
+//     font-weight: 400;
+//     font-size: 20px;
+//     line-height: 34px;
+// }
+
+// .footer_contacts {
+//     margin-top: 127px;
+//     margin-bottom: 15px;
+// }
+
+// .footer_contacts_content{
+//     display: flex;
+//     justify-content: space-between;
+// }
+// .footer_contacts_content_text {
+//     font-family: 'Inter';
+//     font-style: normal;
+//     font-weight: 400;
+//     font-size: 12px;
+//     line-height: 18px;
+// }
+// .footer_contacts_content_social {
+//     display: flex;
+//     gap: 24px;
+// }
+.footer{
+    border-top: 1px solid #e5e5e5;
+    padding-top: 61px;
 }
 
 .footer_content {
     display: flex;
+    flex-wrap: wrap;
+    
     gap: 108px;
-    margin-top: 60px;
+}
+.footer_content_colum {
+
+
 }
 h3{
     font-family: 'Inter';
@@ -468,6 +528,10 @@ h3{
     font-size: 18px;
     line-height: 32px;
     margin-bottom: 24px;
+    
+}
+h3 a{
+    color: #000000;
 }
 .footer_content_colum_item{
     font-family: 'Inter';
@@ -475,6 +539,7 @@ h3{
     font-weight: 400;
     font-size: 20px;
     line-height: 34px;
+    color: #000000;
 }
 
 .footer_contacts {
@@ -485,6 +550,7 @@ h3{
 .footer_contacts_content{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .footer_contacts_content_text {
     font-family: 'Inter';
@@ -492,6 +558,7 @@ h3{
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
+    color: #000000;
 }
 .footer_contacts_content_social {
     display: flex;
@@ -541,7 +608,9 @@ h3{
     .get-start__content{
         flex-direction: column-reverse;
     }
-    
+    .what-learn-wraper{
+        
+    }
     .get-started__image{
         margin-top: -45px;
     }

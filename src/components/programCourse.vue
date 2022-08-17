@@ -26,8 +26,8 @@
       <div class="tabs">
 
         <div class="tab">
-          <input class="hidden-radio" type="radio" id="rd1" name="rd">
-          <label class="tab-label" for="rd1">
+          <input class="hidden-checkbox" type="checkbox" id="cb1" name="cb">
+          <label class="tab-label" for="cb1">
             Введение в профессию
             <span class="lesson-count">5 уроков</span>
           </label>
@@ -41,8 +41,8 @@
         </div>
 
         <div class="tab">
-          <input class="hidden-radio" type="radio" id="rd2" name="rd">
-          <label class="tab-label" for="rd2">
+          <input class="hidden-checkbox" type="checkbox" id="cb2" name="cb">
+          <label class="tab-label" for="cb2">
             Управление проектами
             <span class="lesson-count">5 уроков</span>
           </label>
@@ -71,8 +71,8 @@
         </div>
 
         <div class="tab">
-          <input class="hidden-radio" type="radio" id="rd3" name="rd">
-          <label class="tab-label" for="rd3">
+          <input class="hidden-checkbox" type="checkbox" id="cb3" name="cb">
+          <label class="tab-label" for="cb3">
             Управление продуктом
             <span class="lesson-count">5 уроков</span>
           </label>
@@ -86,8 +86,8 @@
         </div>
 
         <div class="tab">
-          <input class="hidden-radio" type="radio" id="rd4" name="rd">
-          <label class="tab-label" for="rd4">
+          <input class="hidden-checkbox" type="checkbox" id="cb4" name="cb">
+          <label class="tab-label" for="cb4">
             Team Lead
             <span class="lesson-count">5 уроков</span>
           </label>
@@ -101,8 +101,8 @@
         </div>
 
         <div class="tab">
-          <input class="hidden-radio" type="radio" id="rd5" name="rd">
-          <label class="tab-label" for="rd5">
+          <input class="hidden-checkbox" type="checkbox" id="cb5" name="cb">
+          <label class="tab-label" for="cb5">
             Управление командами
             <span class="lesson-count">5 уроков</span>
           </label>
@@ -116,8 +116,8 @@
         </div>
 
         <div class="tab">
-          <input class="hidden-radio" type="radio" id="rd6" name="rd">
-          <label class="tab-label" for="rd6">
+          <input class="hidden-checkbox" type="checkbox" id="cb6" name="cb">
+          <label class="tab-label" for="cb6">
             Финансы для нефинансистов
             <span class="lesson-count">5 уроков</span>
           </label>
@@ -137,7 +137,6 @@
   </div>
 
 </template>
-
 <script>
 export default {
   name: 'programCourse',
@@ -154,16 +153,13 @@ export default {
 <style lang="scss" scoped>
 .count {
   color: #007385;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 140%;
 }
 .course-program {
   background: #FFFFFF;
   border: 1px solid #E0E0E0;
   border-radius: 15px;
+  
   margin: 0 auto;
-  font-family: 'Inter';
 }
 .header {
   display: flex;
@@ -190,13 +186,11 @@ export default {
 }
 .header-info__sections {
   position: relative;
-
-
   font-family: 'Inter';
-  font-weight: 500;
+  font-style: normal;
+font-weight: 500;
 font-size: 18px;
 line-height: 140%;
-
 }
 .header-info__sections:before {
   position: absolute;
@@ -206,14 +200,11 @@ line-height: 140%;
 }
 .header-info__lectures {
   position: relative;
-
   font-family: "Inter";
-  
-  font-weight: 500;
+  font-style: normal;
+font-weight: 500;
 font-size: 18px;
 line-height: 140%;
-  
-
 }
 .header-info__lectures:before {
   position: absolute;
@@ -223,8 +214,9 @@ line-height: 140%;
 }
 .header-info__lecture-time {
   position: relative;
-  font-family: 'Inter';
-  font-weight: 500;
+  font-family: "Inter";
+  font-style: normal;
+font-weight: 500;
 font-size: 18px;
 line-height: 140%;
 }
@@ -235,7 +227,7 @@ line-height: 140%;
   content: url("@/assets/time-clock-ico.svg");
 }
 /* Accordion styles */
-.hidden-radio {
+.hidden-checkbox {
   position: absolute;
   opacity: 0;
   z-index: -1;
@@ -257,28 +249,32 @@ line-height: 140%;
   line-height: 140%;
   color: #FFFFFF;
 }
+@media (max-width:1230px){
+    .lesson-count{
+        display: none;
+    }
+}
+@media (max-width:400px){
+    .header-title{
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 36px;
+    }
+}
+
 .tab {
   width: 100%;
   color: white;
   overflow: hidden;
   border: 1px solid #E0E0E0;
   padding: 0 50px;
-
-  &-label {
-    position: relative;
-    font-weight: 600;
-    font-size: 1.4em;
-    line-height: 1.2em;
   font-family: 'Inter';
   font-style: normal;
-  
   &-label {
     position: relative;
-    font-family: 'Inter';
     font-weight: 500;
-    font-size: 20px;
-    line-height: 34px;
-
+font-size: 20px;
+line-height: 34px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -309,18 +305,6 @@ line-height: 140%;
       list-style-position: inside;
       &-item {
         margin-bottom: 20px;
-
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 140%;
-        /* or 22px */
-
-
-        color: #000000;
-
-      }
         &:last-child {
           margin-bottom: 30px;
         }
@@ -329,7 +313,7 @@ line-height: 140%;
   }
 }
 // :checked
-.hidden-radio:checked {
+.hidden-checkbox:checked {
   ~ .tab-label {
     + &:after {
       transform: rotate(90deg);

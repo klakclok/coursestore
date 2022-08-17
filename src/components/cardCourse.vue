@@ -2,14 +2,6 @@
     
         <div class="card">
 
-            <div class="card_content">
-                <img class="card_content_image" src="../assets/img1.png" alt="">
-                <span class="card_button" href="">Программирование</span>
-                <router-link to="/coursePage" class="card_content_title">Основы программирования</router-link>
-                <p class="card_content_subtitle">Вы научитесь делать веб-сайты, разрабатывать удобные интерфейсы и решать проблемы пользователей.</p>
-                <p class="card_content_price">10 000 ₽</p>
-                
-
             <div class="card_content" >
                 <img class="card_content_image"  :src="this.$store.getters.getHost + card.head_img.img.path" :alt="card.title">
                 <span class="card_button" href="">{{card.category}}</span>
@@ -18,7 +10,7 @@
                 <p class="card_content_price">{{card.price}} <span>&#8381;</span> </p>
             </div>
         </div>
-    </div>
+    
 </template>
 
 
