@@ -61,7 +61,7 @@ import axios from "axios"
             createRequest() {
                 axios({
 
-                    url: 'http://8bit.comrades.dev/api/claim',
+                    url: 'https://8bit.comrades.dev/api/claim',
                     method: "POST",
                     data: {
                     name: this.request.name,

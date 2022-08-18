@@ -124,7 +124,7 @@ import axios from "axios";
         },
         mounted(){
             axios({
-                url: 'http://8bit.comrades.dev/api/courses',
+                url: 'https://8bit.comrades.dev/api/courses',
                 method: "GET",
                 
             }).then((response) => {
@@ -133,7 +133,7 @@ import axios from "axios";
                 console.log(err)
             }),
             axios({
-                url: 'http://8bit.comrades.dev/api/faq',
+                url: 'https://8bit.comrades.dev/api/faq',
                 method: "GET",
                 
             }).then((response) => {
@@ -142,7 +142,7 @@ import axios from "axios";
                 console.log(err)
             }),
             axios({
-                url: 'http://8bit.comrades.dev/api/info',
+                url: 'https://8bit.comrades.dev/api/info',
                 method: "GET",
                 
             }).then((response) => {

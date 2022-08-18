@@ -40,7 +40,7 @@ export default {
   },
   mounted() {
     axios({
-      url: 'http://8bit.comrades.dev/api/claims',
+      url: 'https://8bit.comrades.dev/api/claims',
       method: "GET"
     }).then((response) => {
       this.claims = response.data
