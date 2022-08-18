@@ -15,7 +15,7 @@ const routes = [
     path: '/coursePage',
     name: 'coursePage',
     meta: {layout:'page'},
-    component: () => import(/* webpackChunkName: "about" */ '@/views/coursePage.vue')
+    component: () => import('@/views/coursePage.vue')
   },
   {
     path: '/login',
@@ -46,13 +46,19 @@ const routes = [
     name: 'claims',
     meta: {layout: 'main', requiresAuth: true},
     component: () => import('@/views/admin/Claims')
+  },
+  {
+    path: '/users',
+    name: 'users',
+    meta: {layout: 'main', requiresAuth: true},
+    component: () => import('@/views/admin/Users')
   }
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes,
+  routes
 })
 router.beforeEach((to, from, next) => {
 
@@ -66,5 +72,5 @@ router.beforeEach((to, from, next) => {
       next()
     }
   })
-  
+
 export default router

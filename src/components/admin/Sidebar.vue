@@ -23,7 +23,8 @@ export default {
         {title: 'Курсы', url: '/admin', exact: true},
         {title: 'FAQ', url: '/faq'},
         {title: 'Профиль', url: '/profile'},
-        {title: 'Заявки', url:'/claims'}
+        {title: 'Заявки', url:'/claims'},
+        {title: 'Пользователи', url:'/users'}
       ]
     }
   }
