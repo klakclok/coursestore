@@ -9,9 +9,8 @@
         class="edit-btn"
     ></div>
     <span class="course-category">{{ course.category }}</span>
-<!-- v-if="course.head_img && course.head_img.img && course.head_img.img.path" -->
     <img
-        
+        v-if="course.head_img && course.head_img.img && course.head_img.img.path"
         class="course-image"
         :src="this.$store.getters.getHost + course.head_img.img.path"
         :alt="course.title"
@@ -42,6 +41,8 @@ export default {
   height: 200px;
   min-height: 200px;
   object-fit: cover;
+  
+  
 }
 
 .delete-btn {

@@ -180,6 +180,7 @@ h2{
     font-size: 48px;
     line-height: 58px;
     /* margin-bottom: 68px; */
+    margin-bottom: 40px;
 }
 
 li{

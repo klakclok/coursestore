@@ -34,11 +34,12 @@
 
 <style scoped>
 .questions {
-    margin-top: 40px;
+    
     border: 1px solid #E5E5E5;
     border-radius: 6px;
     width: 1056px;
 }
+
 .questions-item {
     position: relative;
     
