@@ -34,24 +34,22 @@
 
 <style scoped>
 .questions {
-    
+    margin-top: 40px;
     border: 1px solid #E5E5E5;
     border-radius: 6px;
     width: 1056px;
-    
 }
-
 .questions-item {
     position: relative;
-    /* margin-bottom: 20px; */
     
+    /* margin-bottom: 20px; */
+
 }
 .questions-item__input{
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
-    
 }
 .questioan-item__trigger {
     display: block;
@@ -62,13 +60,8 @@
     font-size: 20px;
     line-height: 34px; */
     border-bottom: 1px solid #E5E5E5;
-
-    cursor: pointer;
-    
-
     padding-right: 26px;
-    cursor: pointer;
-
+    
 }
 .questioan-item__trigger p{
     font-family: 'Inter';
@@ -79,6 +72,12 @@
     /* padding: 30px;
     margin-left: 33px; */
     margin: 30px 0px 30px 33px;
+    /* padding-right: 26px; */
+}
+.questioan-item__trigger p:after {
+    content: url('../assets/Icon2.svg');
+    float: right;
+    
     
 }
 .questioan-item__content {
@@ -93,7 +92,7 @@
     font-size: 16px;
     line-height: 24px;
     max-width: 970px; */
-    transition: all 1s ease;
+    
 }
 .questioan-item__content p{
     font-family: 'Inter';
@@ -104,11 +103,64 @@
     max-width: 970px;
     /* position: relative; */
     margin: 0px 126px 30px 33px;
+    
 }
+
 .questions-item__input:checked ~ .questioan-item__trigger{
     border-bottom: none;
+}
+.questions-item__input:checked ~ .questioan-item__trigger p:after{
+    transform: rotate(180deg);
 }
 .questions-item__input:checked ~ .questioan-item__content{
     display: block;
 }
+@media(max-width:1200px){
+    .questions{
+        max-width: 900px;
+    }
+}
+@media(max-width:940px){
+    .questions{
+        max-width: 700px;
+    }
+}
+@media(max-width:730px){
+    .questions{
+        max-width: 550px;
+    }
+}
+@media(max-width:580px){
+    .questions{
+        max-width: 450px;
+    }
+    .questioan-item__trigger p:after {
+    margin-top: -10px;
+    }
+}
+@media(max-width:480px){
+    .questions{
+        max-width: 350px;
+    }
+}
+@media(max-width:380px){
+    .questions{
+        max-width: 280px;
+    }
+    .questioan-item__trigger p:after {
+    margin-top: -10px;
+    }
+    .questioan-item__trigger p{
+        font-size: 16px;
+        line-height: 140%;
+        margin: 15px 0px 15px 15px;
+    }
+    .questioan-item__content p{
+        font-size: 14px;
+        line-height: 140%;
+        margin: 0px 55px 15px 15px;
+    }
+}
+
+
 </style>

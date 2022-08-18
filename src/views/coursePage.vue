@@ -302,7 +302,7 @@ section{
     border-radius: 10px;
     padding: 20px 50px;
     color: #FFFFFF;
-    z-index: 1000;
+    z-index: 499;
     cursor: pointer;
 }
 .button:hover{
