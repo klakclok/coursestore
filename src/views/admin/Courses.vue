@@ -49,7 +49,7 @@ export default {
     deleteCourse(id) {
       this.$store.dispatch('deleteCourse', id)
       this.$store.dispatch('getCourses').then(() => {
-        this.$store.dispatch('getCourses')
+      this.$store.dispatch('getCourses')
       })
     },
     editCourse(course) {
