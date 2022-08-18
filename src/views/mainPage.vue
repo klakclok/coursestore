@@ -4,7 +4,7 @@
             <div class="conteiner">
                 <div class="main_screen_colum">
                     <div class="main_screen_colum_title">
-                        <h1>Обмен знаниями без границ</h1>
+                        <h1>Обмен <span class="span"> знаниями</span> без границ</h1>
                         <p class="main_screen_colum_subtitle">Единственная образовательная онлайн-площадка для лекций, курсов, мастер-классов от мусульман для мусульман, а также единственное в своем роде место знакомства и обмена знаниями в сфере исламской тематики, арабистики и востоковедения.</p>
                         <div class="main_screen_statistics">
                     <div class="main_screen_statistics_inform">
