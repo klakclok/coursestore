@@ -28,6 +28,7 @@
 
 <script>
 import axios from "axios"
+
     export default {
         name:'formbye',
         data(){
@@ -38,13 +39,13 @@ import axios from "axios"
                     name:"",
                     phone:"",
                     patronymic:""
-                    
+
                 }
             }
-        },  
+        },
         props:{
             value:{
-                
+
                 default:false
             }
         },
@@ -86,7 +87,7 @@ import axios from "axios"
                 return this.request.name && this.request.surname && this.request.phone
             }
         }
-        
+
     }
 </script>
 
@@ -100,7 +101,7 @@ import axios from "axios"
         position: fixed;
         display: flex;
         z-index: 500;
-        
+
     }
     .form-title{
         font-family: 'Inter';
@@ -119,7 +120,7 @@ import axios from "axios"
         background: white;
         border-radius: 12px;
         width: 700px;
-        
+
         height: max-content;
     }
     input {outline:none;}
@@ -161,7 +162,7 @@ import axios from "axios"
         border: none;
         margin: 0px 200px;
         margin-bottom: 5px;
-        
+
     }
     .create-request__button-active {
         background-color: #007385;

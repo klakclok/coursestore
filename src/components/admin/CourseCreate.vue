@@ -5,9 +5,8 @@
         <h4>Создание курса</h4>
       </div>
 
-      <form
-          @submit.prevent="onSubmit"
-      >
+      <form @submit.prevent="onSubmit">
+        
         <div class="input-field">
           <input
               @keyup.enter="onKeyup"

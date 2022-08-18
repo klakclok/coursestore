@@ -37,13 +37,16 @@
                         <div class="main_screen_statistics_inform_text">Лекторов</div>
                     </div>
                 </div> -->
-                
+
             </div>
         </div>
         <div class="course">
             <div class="conteiner">
                 <h2>Курсы</h2>
-                <SwiperMain :cards="cards" />
+                <SwiperMain :cards="cards"
+                v-if="cards.length > 0"
+                />
+                <h2 v-else  style="color:red;">Курсов нет</h2>
             </div>
         </div>
         <div class="questions">
@@ -52,8 +55,7 @@
                 <faqsList :faqs="faqs" />
             </div>
         </div>
-         <div class="footer">
-            
+        <div class="footer">
             <div class="conteiner">
                 <div class="footer_content">
                     <div class="footer_content_colum">
@@ -80,7 +82,7 @@
                             <li ><a class="footer_content_colum_item" href="">Features</a></li>
                         </ul>
                     </div>
-                    
+
                 </div>
                 <div class="footer_contacts">
                     <div class="conteiner">
@@ -93,7 +95,7 @@
                                 <a href=""><img class="contacts" src="../assets//instagram.svg" alt=""></a>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -113,7 +115,7 @@ import axios from "axios";
     CardCourse,
     SwiperMain,
     faqsList,
-    
+
 },
         data(){
             return{
@@ -126,7 +128,7 @@ import axios from "axios";
             axios({
                 url: 'https://8bit.comrades.dev/api/courses',
                 method: "GET",
-                
+
             }).then((response) => {
                 this.cards=response.data
             }).catch((err) => {
@@ -135,7 +137,7 @@ import axios from "axios";
             axios({
                 url: 'https://8bit.comrades.dev/api/faq',
                 method: "GET",
-                
+
             }).then((response) => {
                 this.faqs=response.data
             }).catch((err) => {
@@ -144,14 +146,14 @@ import axios from "axios";
             axios({
                 url: 'https://8bit.comrades.dev/api/info',
                 method: "GET",
-                
+
             }).then((response) => {
                 this.info=response.data[0].users
             }).catch((err) => {
                 console.log(err)
             })
         },
-        
+
     }
 </script>
 
@@ -200,13 +202,13 @@ li{
 
 .main_screen_colum {
     /* display: flex; */
-    
+
 }
 .main_screen_colum_title {
     /* margin-bottom: 60px; */
     position: relative;
-    
-    
+
+
 }
 
 
@@ -221,7 +223,7 @@ h1{
     width: 588px;
     z-index: 5;
     /* margin-bottom: -100px; */
-    
+
 }
 span{
     position: relative;
@@ -250,7 +252,7 @@ span::after{
     background-color: inherit;
     margin-top: 173px;
     margin-bottom: 60px;
-    
+
 }
 .main_screen_statistics_inform{
 }
@@ -276,22 +278,22 @@ span::after{
     left: 969px;
     /* margin-top: 44px; */
     z-index: 0;
-    
+
 }
 /* -------------ЧИСТО НА КАРТИНКУ------------ */
 @media(max-width:1750px){
     .phone{
-        left: 800px; 
+        left: 800px;
     }
 }
 @media(max-width:1600px){
     .phone{
-        left: 750px; 
+        left: 750px;
     }
 }
 @media(max-width:1540px){
     .phone{
-        left: 750px; 
+        left: 750px;
     }
 }
 @media(max-width:1370px){
@@ -310,7 +312,7 @@ span::after{
 }
 @media(max-width:1270px){
     .phone{
-        left: 550px; 
+        left: 550px;
     }
 }
 @media(max-width:1200px){
@@ -318,7 +320,7 @@ span::after{
         /* transform: rotate(-40deg); */
         width: 670px;
         height: auto;
-        left: 556px; 
+        left: 556px;
         top: 72px;
     }
     .main_screen_statistics{
@@ -328,7 +330,7 @@ span::after{
 @media(max-width:1050px){
     .phone{
         /* transform: rotate(-40deg); */
-        left: 480px; 
+        left: 480px;
         width: 670px;
         height: auto;
         top: -14px;
@@ -366,44 +368,44 @@ span::after{
 @media(max-width:900px){
     .phone{
         transform: rotate(-40deg);
-        left: 460px; 
+        left: 460px;
     }
 }
 @media(max-width:750px){
     .phone{
         transform: rotate(-40deg);
-        left: 475px; 
+        left: 475px;
         width: 420px;
         height: auto;
     }
-    
+
 
 }
 @media(max-width:700px){
     .phone{
         transform: rotate(-40deg);
-        left: 425px; 
+        left: 425px;
         width: 420px;
         height: auto;
     }
-    
+
 
 }
 @media(max-width:650px){
     .phone{
         transform: rotate(-40deg);
-        left: 375px; 
+        left: 375px;
         width: 400px;
         height: auto;
         margin-top: 30px;
     }
-    
+
 
 }
 @media(max-width:600px){
     .phone{
         transform: rotate(-40deg);
-        left: 336px; 
+        left: 336px;
         width: 400px;
         height: auto;
         margin-top: 30px;
@@ -424,16 +426,16 @@ span::after{
         font-size: 20px;
     }
     span::after {
-        content: url(../assets//line5.svg);
+        content: url(../assets/line5.svg);
         top: 15px;
     }
-    
+
 
 }
 @media(max-width:550px){
     .phone{
         transform: rotate(-40deg);
-        left: 286px; 
+        left: 286px;
         width: 400px;
         height: auto;
         margin-top: 15px;
@@ -442,7 +444,7 @@ span::after{
 @media(max-width:500px){
     .phone{
         transform: rotate(-40deg);
-        left: 236px; 
+        left: 236px;
         width: 400px;
         height: auto;
         margin-top: 15px;
@@ -466,7 +468,7 @@ span::after{
 @media(max-width:450px){
     .phone{
         transform: rotate(-40deg);
-        left: 250px; 
+        left: 250px;
         width: 300px;
         height: auto;
         margin-top: 15px;
@@ -491,40 +493,40 @@ span::after{
 @media(max-width:420px){
     .phone{
         transform: rotate(-40deg);
-        left: 220px; 
+        left: 220px;
         width: 300px;
         height: auto;
         margin-top: 15px;
     }
-    
+
 }
 @media(max-width:380px){
     .phone{
         transform: rotate(-40deg);
-        left: 225px; 
+        left: 225px;
         width: 230px;
         height: auto;
         margin-top: 15px;
         position: absolute;
         right: 0;
-        
+
     }
-    
+
 }
 @media(max-width:350px){
     .phone{
         transform: rotate(-40deg);
-        left: 200px; 
+        left: 200px;
         width: 230px;
         height: auto;
         margin-top: 15px;
     }
-    
+
 }
 @media(max-width:330px){
     .phone{
         transform: rotate(-30deg);
-        left: 197px; 
+        left: 197px;
         width: 230px;
         height: auto;
         margin-top: 15px;
@@ -532,12 +534,12 @@ span::after{
     /* .main_screen{
         padding-top: 30px;
     } */
-    
+
 }
 @media(max-width:320px){
     .phone{
         transform: rotate(-30deg);
-        left: 187px; 
+        left: 187px;
         width: 230px;
         height: auto;
         margin-top: 15px;
@@ -545,7 +547,7 @@ span::after{
     /* .main_screen{
         padding-top: 30px;
     } */
-    
+
 }
 
 /* ----------------------------------------------- */
@@ -576,7 +578,7 @@ span::after{
 .footer_content {
     display: flex;
     flex-wrap: wrap;
-    
+
     gap: 108px;
 }
 .footer_content_colum {
@@ -619,7 +621,7 @@ h3{
 .footer_contacts_content_social {
     display: flex;
     gap: 24px;
-    
+
 }
 .contacts {
 }
@@ -627,7 +629,7 @@ h3{
     .footer_content{
         gap: 40px;
         margin-bottom: 313px;
-        
+
     }
     .footer_contacts_content{
         flex-direction: column-reverse;
@@ -636,7 +638,7 @@ h3{
     .footer_contacts_content_social{
         margin-bottom: 29px;
     }
-    
+
 }
 @media(max-width:1050px){
     h2{
@@ -644,7 +646,7 @@ h3{
         line-height: 36px;
         margin-bottom: 30px;
     }
-    
+
 }
 
 </style>

@@ -38,6 +38,7 @@ export default {
   actions: {
     createCourse({commit}, course) {
       axios({
+        
         url: 'https://8bit.comrades.dev/api/course/insert',
         method: "POST",
         headers: {
