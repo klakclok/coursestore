@@ -4,6 +4,10 @@
       Нет заявок
     </h2>
     <div v-for="claim in claims" :key="claim.id" class="claim" v-else>
+      <div
+        @click="deleteClaim(claim.id)"
+        class="delete-btn"
+      ></div>
       <div class="claim__row">
         <span>Фамилия</span>
         <p>{{ claim.surname }}</p>
@@ -38,16 +42,35 @@ export default {
       claims: []
     }
   },
+  methods: {
+    deleteClaim(id) {
+      axios({
+        url: `https://8bit.comrades.dev/api/claim/delete/${id}`,
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        }
+      }).then(() => {
+        this.claims = this.claims.filter(item => item.id !== id)
+        this.getClaims()
+        console.log(this.claims)
+      }).catch(err => {
+        console.log(err)
+      })
+    },
+    getClaims() {
+      axios({
+        url: 'https://8bit.comrades.dev/api/claims',
+        method: "GET"
+      }).then((response) => {
+        this.claims = response.data
+      }).catch((err) => {
+        console.log(err)
+      })
+    }
+  },
   mounted() {
-    axios({
-      url: 'https://8bit.comrades.dev/api/claims',
-      method: "GET"
-    }).then((response) => {
-      this.claims = response.data
-      console.log(this.claims)
-    }).catch((err) => {
-      console.log(err)
-    })
+    this.getClaims()
   }
 }
 </script>
@@ -61,7 +84,24 @@ export default {
   gap: 30px;
 }
 
+.delete-btn {
+  right: 0;
+  top: 0;
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  content: url("@/assets/images/svg/delete-ico.svg");
+  z-index: 2;
+}
+
+.claim:hover {
+  > .delete-btn {
+    display: inline;
+  }
+}
+
 .claim {
+  position: relative;
   width: 330px;
   height: 300px;
   display: flex;
