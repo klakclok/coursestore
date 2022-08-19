@@ -1,5 +1,5 @@
 <template>
-    
+
         <div class="card">
 
             <div class="card_content" >
@@ -10,7 +10,7 @@
                 <p class="card_content_price">{{card.price}} <span>&#8381;</span> </p>
             </div>
         </div>
-    
+
 </template>
 
 
@@ -19,7 +19,7 @@
 
         name: 'cardCourse',
         props:{
-            card:{  
+            card:{
                 type: Object,
                 required: true,
             }
@@ -40,7 +40,7 @@
     margin-top: 68px;
     position: relative;
 
-    
+
 }
 .card_content {
     /* margin: 0 auto; */
@@ -49,15 +49,15 @@
     position: absolute;
     top: -20px;
     /* margin-left: 20px; */
-    
-    
-    
+
+
+
 }
 .card_content_image{
     /* margin-right: 17px; */
     /* width: 305px; */
 
-    height: auto;
+    object-fit: cover;
 
     width: 305px;
     height: 250px;
@@ -66,7 +66,7 @@
     border-radius: 10px;
     margin-bottom: 16px;
     /* margin-top: -20px; */
-    
+
 }
 .card_button {
     position: absolute;
@@ -83,7 +83,7 @@
     padding: 5px;
     background-color: #007385;
     text-decoration:none;
-    
+
 }
 .card_content_title {
     font-family: 'Inter';

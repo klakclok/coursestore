@@ -7,14 +7,14 @@
                     <p>{{faq.title}}</p>
                 </label>
                 <div class="questioan-item__content">
-                    <p>{{faq.description}}</p> 
+                    <p>{{faq.description}}</p>
                 </div>
             </div>
 
 
 
         </div>
-    </div> 
+    </div>
 </template>
 
 <script>
@@ -25,16 +25,16 @@
                 type: Object,
                 required: true
             },
-            
+
         }
     }
-    
+
 </script>
 
 
 <style scoped>
 .questions {
-    
+
     border: 1px solid #E5E5E5;
     border-radius: 6px;
     width: 1056px;
@@ -42,7 +42,7 @@
 
 .questions-item {
     position: relative;
-    
+
     /* margin-bottom: 20px; */
 
 }
@@ -62,7 +62,8 @@
     line-height: 34px; */
     border-bottom: 1px solid #E5E5E5;
     padding-right: 26px;
-    
+    cursor:pointer;
+
 }
 .questioan-item__trigger p{
     font-family: 'Inter';
@@ -78,8 +79,8 @@
 .questioan-item__trigger p:after {
     content: url('../assets/Icon2.svg');
     float: right;
-    
-    
+
+
 }
 .questioan-item__content {
     /* padding: 20px; */
@@ -93,7 +94,7 @@
     font-size: 16px;
     line-height: 24px;
     max-width: 970px; */
-    
+
 }
 .questioan-item__content p{
     font-family: 'Inter';
@@ -104,7 +105,7 @@
     max-width: 970px;
     /* position: relative; */
     margin: 0px 126px 30px 33px;
-    
+
 }
 
 .questions-item__input:checked ~ .questioan-item__trigger{
