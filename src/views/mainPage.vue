@@ -23,20 +23,6 @@
                     </div>
                     <img class="phone" src="../assets/Saly-24.svg" alt="">
                 </div>
-                <!-- <div class="main_screen_statistics">
-                    <div class="main_screen_statistics_inform">
-                        <div class="main_screen_statistics_inform_number">3000</div>
-                        <div class="main_screen_statistics_inform_text">Пользоветелей</div>
-                    </div>
-                    <div class="main_screen_statistics_inform">
-                        <div class="main_screen_statistics_inform_number">250</div>
-                        <div class="main_screen_statistics_inform_text">Лекций</div>
-                    </div>
-                    <div class="main_screen_statistics_inform">
-                        <div class="main_screen_statistics_inform_number">120</div>
-                        <div class="main_screen_statistics_inform_text">Лекторов</div>
-                    </div>
-                </div> -->
 
             </div>
         </div>
@@ -353,6 +339,7 @@ span::after{
     }
     .main_screen_statistics_inform_number{
         font-size: 50px;
+        
     }
     .main_screen_statistics_inform_text{
         font-size: 20px;

@@ -118,7 +118,7 @@
         <div class="tab">
           <input class="hidden-checkbox" type="checkbox" id="cb6" name="cb">
           <label class="tab-label" for="cb6">
-            Финансы для нефинансистов
+            <p>Финансы для нефинансистов</p>
             <span class="lesson-count">5 уроков</span>
           </label>
           <div class="tab-content">
@@ -156,9 +156,9 @@ export default {
 }
 .course-program {
   background: #FFFFFF;
-  border: 1px solid #E0E0E0;
+  // border: 1px solid #E0E0E0;
   border-radius: 15px;
-  
+
   margin: 0 auto;
 }
 .header {
@@ -168,29 +168,29 @@ export default {
   align-items: center;
   padding: 50px;
   gap: 20px;
+  border: 1px solid #E0E0E0;
+  border-radius: 15px 15px 0px 0px;
 }
 .header-title {
   font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 58px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
 }
 .header-info {
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   gap: 63px;
   font-weight: 700;
   font-size: 1.2em;
   margin-left: 30px;
+  max-width: 494px;
 }
 .header-info__sections {
   position: relative;
   font-family: 'Inter';
-  font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 140%;
+  font-weight: 500;
 }
 .header-info__sections:before {
   position: absolute;
@@ -201,10 +201,7 @@ line-height: 140%;
 .header-info__lectures {
   position: relative;
   font-family: "Inter";
-  font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 140%;
+  font-weight: 500;
 }
 .header-info__lectures:before {
   position: absolute;
@@ -215,10 +212,7 @@ line-height: 140%;
 .header-info__lecture-time {
   position: relative;
   font-family: "Inter";
-  font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 140%;
+  font-weight: 500;
 }
 .header-info__lecture-time:before {
   position: absolute;
@@ -250,17 +244,55 @@ line-height: 140%;
   color: #FFFFFF;
 }
 @media (max-width:1230px){
-    .lesson-count{
-        display: none;
-    }
+  .lesson-count{
+    display: none;
+  }
+}
+@media (max-width:580px){
+  .header-title{
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 36px;
+  }
+}
+@media (max-width:525px){
+  .header-title{
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 36px;
+  }
+  .header{
+    padding: 30px;
+  }
+  .tab{
+    padding: 0px 30px;
+  }
+}
+@media (max-width:460px){
+  .header{
+    padding: 20px;
+  }
 }
 @media (max-width:400px){
-    .header-title{
-      font-weight: 700;
-      font-size: 30px;
-      line-height: 36px;
-    }
+  .header-title{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+
 }
+@media (max-width:360px){
+  .header{
+    padding: 10px;
+  }
+}
+@media (max-width:380px){
+  .header-info{
+    gap: 24px;
+  }
+}
+
 
 .tab {
   width: 100%;
@@ -273,8 +305,8 @@ line-height: 140%;
   &-label {
     position: relative;
     font-weight: 500;
-font-size: 20px;
-line-height: 34px;
+    font-size: 20px;
+    line-height: 34px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -312,6 +344,7 @@ line-height: 34px;
     }
   }
 }
+
 // :checked
 .hidden-checkbox:checked {
   ~ .tab-label {
@@ -324,14 +357,109 @@ line-height: 34px;
   }
 }
 .tab-content__list-item{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 140%;
-    /* or 22px */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
 
 
-    color: #000000;
+  color: #000000;
+}
+@media (max-width:1230px){
+  .lesson-count{
+    display: none;
+  }
+}
+@media (max-width:580px){
+  .header-title{
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 36px;
+  }
+}
+@media (max-width:525px){
+  .header-title{
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 36px;
+  }
+  .header{
+    padding: 30px;
+  }
+  .tab{
+    padding: 0px 30px;
+  }
+}
+@media (max-width:470px){
+  .tab-label{
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+@media (max-width:460px){
+  .header{
+    padding: 20px;
+  }
+  .tab{
+    border: none;
+    border-top:1px solid #E0E0E0;
+    padding: 0px 0px;
+  }
+  .header{
+    border: none;
+    padding: 0px;
+  }
+  .header-info{
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width:400px){
+  .header-title{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+}
+@media (max-width:390px){
+  .tab-label{
+    // max-width: 141px;
+  }
+}
+@media (max-width:360px){
+  // .header{
+  //   padding: 10px;
+  // }
+  p{
+    max-width: 212px;
+  }
+}
+@media (max-width:660px){
+  .header-info{
+    margin-left: 0px;
+    margin-top: 35px;
+  }
+  .header-info__sections:before {
+    position: absolute;
+    left: 0px;
+    top: -30px;
+    content: url("@/assets/folder-ico.svg");
+  }
+  .header-info__lectures:before {
+    position: absolute;
+    left: 0px;
+    top: -30px;
+    content: url("@/assets/web-play-ico.svg");
+  }
+
+  .header-info__lecture-time:before {
+    position: absolute;
+    left: 0px;
+    top: -30px;
+    content: url("@/assets/time-clock-ico.svg");
+  }
 }
 </style>

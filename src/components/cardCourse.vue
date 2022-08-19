@@ -58,7 +58,6 @@
     /* width: 305px; */
 
     object-fit: cover;
-
     width: 305px;
     height: 250px;
 
