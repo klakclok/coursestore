@@ -304,6 +304,7 @@ section{
     color: #FFFFFF;
     z-index: 499;
     cursor: pointer;
+    outline: none;
 }
 .button:hover{
         background: linear-gradient(90deg,#ea1414,#7004a7);
