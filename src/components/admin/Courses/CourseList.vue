@@ -3,14 +3,14 @@
 
     <div class="courses" v-if="courses.length > 0">
         <transition-group name="list" tag="div">
-            <CourseItem
+          <CourseItem
             v-for="course in courses"
             :key="course.id"
             :course="course"
             @delete="$emit('delete', course.id)"
             @edit="$emit('edit', course)"
             class="list-item"
-        />
+          />
         </transition-group>
 
     </div>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import CourseItem from "@/components/admin/CourseItem";
+import CourseItem from "@/components/admin/Courses/CourseItem";
 
 export default {
   name: "CourseList",
@@ -40,9 +40,9 @@ export default {
 <style scoped>
 
 .list{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 .list-item {
   display: inline-block;

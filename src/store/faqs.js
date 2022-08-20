@@ -29,7 +29,8 @@ export default {
   actions: {
     createFAQ(commit, faq) {
       axios({
-        url: 'https://8bit.comrades.dev/api/faq/insert',
+        // url: 'https://8bit.comrades.dev/api/faq/insert',
+        url: 'http://academy/api/faq/insert',
         data: {
           title: faq.title,
           description: faq.description,
@@ -46,7 +47,8 @@ export default {
     },
     getFAQ({commit}) {
       axios({
-        url: 'https://8bit.comrades.dev/api/faq',
+        // url: 'https://8bit.comrades.dev/api/faq',
+        url: 'http://academy/api/faq',
         method: "GET"
       }).then((response) => {
         commit('updateFAQ', response.data)
@@ -56,7 +58,8 @@ export default {
     },
     deleteFAQ({commit}, id) {
       axios({
-        url: `https://8bit.comrades.dev/api/faq/delete/${id}`,
+        // url: `https://8bit.comrades.dev/api/faq/delete/${id}`,
+        url: `http://academy/api/faq/delete/${id}`,
         method: 'POST',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -69,7 +72,8 @@ export default {
     },
     editFAQ({commit}, faq) {
       axios({
-        url: `https://8bit.comrades.dev/api/faq/update`,
+        // url: `https://8bit.comrades.dev/api/faq/update`,
+        url: `http://academy/api/faq/update`,
         method: 'POST',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`

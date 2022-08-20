@@ -38,8 +38,8 @@ export default {
   actions: {
     createCourse({commit}, course) {
       axios({
-        
-        url: 'https://8bit.comrades.dev/api/course/insert',
+        // url: 'https://8bit.comrades.dev/api/course/insert',
+        url: 'http://academy/api/course/insert',
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -60,7 +60,8 @@ export default {
     },
     getCourses({commit}) {
       axios({
-        url: 'https://8bit.comrades.dev/api/courses',
+        // url: 'https://8bit.comrades.dev/api/courses',
+        url: 'http://academy/api/courses',
         method: "GET",
       }).then((response) => {
         commit('updateCourses', response.data)
@@ -70,7 +71,8 @@ export default {
     },
     deleteCourse({commit}, id) {
       axios({
-        url: `https://8bit.comrades.dev/api/course/delete/${id}`,
+        // url: `https://8bit.comrades.dev/api/course/delete/${id}`,
+        url: `http://academy/api/course/delete/${id}`,
         method: 'POST',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -84,7 +86,8 @@ export default {
     editCourse({commit}, course) {
       console.log(course.img)
       axios({
-        url: `https://8bit.comrades.dev/api/course/update`,
+        // url: `https://8bit.comrades.dev/api/course/update`,
+        url: `http://academy/api/course/update`,
         method: 'POST',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,

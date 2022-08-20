@@ -26,9 +26,9 @@
 </template>
 
 <script>
-import FAQCreate from "@/components/admin/FAQCreate";
-import FAQEdit from "@/components/admin/FAQEdit";
-import FAQList from "@/components/admin/FAQList";
+import FAQCreate from "@/components/admin/FAQs/FAQCreate";
+import FAQEdit from "@/components/admin/FAQs/FAQEdit";
+import FAQList from "@/components/admin/FAQs/FAQList";
 
 export default {
   name: "FAQ",

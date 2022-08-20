@@ -5,6 +5,7 @@ import info from './profile'
 import courses from "@/store/courses"
 import faqs from "@/store/faqs";
 import users from '@/store/users'
+import category from '@/store/category'
 
 Vue.use(Vuex)
 
@@ -24,6 +25,6 @@ export default new Vuex.Store({
     }
   },
   modules: {
-    auth, info, courses, faqs, users
+    auth, info, courses, faqs, users, category
   }
 })

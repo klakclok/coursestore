@@ -5,7 +5,9 @@
     </div>
     <section>
       <div class="row">
-        <CourseCreate/>
+        <CourseCreate
+        :key="courses.length"
+        />
         <CourseEdit
           :value="editingValue"
         />
@@ -24,9 +26,9 @@
 </template>
 
 <script>
-import CourseCreate from "@/components/admin/CourseCreate";
-import CourseEdit from "@/components/admin/CourseEdit";
-import CourseList from "@/components/admin/CourseList";
+import CourseCreate from "@/components/admin/Courses/CourseCreate";
+import CourseEdit from "@/components/admin/Courses/CourseEdit";
+import CourseList from "@/components/admin/Courses/CourseList";
 
 export default {
   name: "Courses",
@@ -42,8 +44,9 @@ export default {
     editingValue: undefined,
   }),
   mounted() {
-    this.$store.dispatch('getCourses')
     M.updateTextFields()
+    this.$store.dispatch('getCourses')
+    this.$store.dispatch('getCategories')
   },
   methods: {
     deleteCourse(id) {
@@ -55,9 +58,6 @@ export default {
     editCourse(course) {
       this.editingValue = course
     }
-  },
-  watch: {
-
   }
 }
 </script>

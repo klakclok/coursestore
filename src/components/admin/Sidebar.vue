@@ -20,7 +20,8 @@ export default {
   data () {
     return {
       links: [
-        {title: 'Курсы', url: '/admin', exact: true},
+        {title: 'Категории', url: '/admin', exact: true},
+        {title: 'Курсы', url: '/courses'},
         {title: 'FAQ', url: '/faq'},
         {title: 'Профиль', url: '/profile'},
         {title: 'Заявки', url:'/claims'},

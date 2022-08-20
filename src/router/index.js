@@ -24,10 +24,16 @@ const routes = [
     component: () => import('@/views/admin/Login')
   },
   {
+    path: '/courses',
+    name: 'courses',
+    meta: {layout: 'main', requiresAuth: true},
+    component: () => import('@/views/admin/Courses')
+  },
+  {
     path: '/admin',
     name: 'admin',
     meta: {layout: 'main', requiresAuth: true},
-    component: () => import('@/views/admin/Courses')
+    component: () => import('@/views/admin/Category')
   },
   {
     path: '/faq',

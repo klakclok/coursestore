@@ -83,11 +83,6 @@ export default {
       })
     },
     onKeyup() {
-      if (this.$v.$invalid) {
-        this.$v.$touch()
-        return
-      }
-
       this.faq.title = ''
       this.faq.description = ''
     }
