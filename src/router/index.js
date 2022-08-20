@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import mainPage from '@/views/mainPage.vue'
 import store from "@/store";
+import coursePage from '@/views/coursePage'
 Vue.use(VueRouter)
 
 const routes = [
@@ -64,7 +65,10 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
 router.beforeEach((to, from, next) => {
 

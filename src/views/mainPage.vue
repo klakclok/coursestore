@@ -23,33 +23,17 @@
                     </div>
                     <img class="phone" src="../assets/Saly-24.svg" alt="">
                 </div>
-                <!-- <div class="main_screen_statistics">
-                    <div class="main_screen_statistics_inform">
-                        <div class="main_screen_statistics_inform_number">3000</div>
-                        <div class="main_screen_statistics_inform_text">Пользоветелей</div>
-                    </div>
-                    <div class="main_screen_statistics_inform">
-                        <div class="main_screen_statistics_inform_number">250</div>
-                        <div class="main_screen_statistics_inform_text">Лекций</div>
-                    </div>
-                    <div class="main_screen_statistics_inform">
-                        <div class="main_screen_statistics_inform_number">120</div>
-                        <div class="main_screen_statistics_inform_text">Лекторов</div>
-                    </div>
-                </div> -->
 
             </div>
         </div>
-        <div class="course">
+        <div class="course" v-if="cards.length > 0">
             <div class="conteiner">
                 <h2>Курсы</h2>
                 <SwiperMain :cards="cards"
-                v-if="cards.length > 0"
                 />
-                <h2 v-else  style="color:red;">Курсов нет</h2>
             </div>
         </div>
-        <div class="questions">
+        <div class="questions" v-if="faqs.length > 0">
             <div class="conteiner">
                 <h2>Часто задаваемые вопросы</h2>
                 <faqsList :faqs="faqs" />
@@ -353,6 +337,7 @@ span::after{
     }
     .main_screen_statistics_inform_number{
         font-size: 50px;
+
     }
     .main_screen_statistics_inform_text{
         font-size: 20px;

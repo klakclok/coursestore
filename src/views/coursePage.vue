@@ -36,7 +36,7 @@
             <transition name="slide-fade">
                 <FormBuy  v-model="requestVisible" @request="showRequest"/>
             </transition>
-            
+
             <section class="what-learn">
                     <div class="what-learn__container">
                         <div class="what-learn__content">
@@ -73,7 +73,7 @@
                 <div class="program-course__container">
                     <ProgramCourse />
                 </div>
-            </section>  
+            </section>
             <section class="who-course">
                 <div class="who-course__container">
                     <div class="who-course__contant">
@@ -150,7 +150,7 @@ import ProgramCourse from '@/components/programCourse.vue';
 import FormBuy from '@/components/formBuy';
     export default {
     name: "coursePage",
-    components: { 
+    components: {
         ProgramCourse,
         FormBuy },
     data(){
@@ -162,14 +162,14 @@ import FormBuy from '@/components/formBuy';
         showRequest(request){
             this.requestVisible = request;
         },
-        
+
     }
 
 }
 </script>
 <style lang="scss" scoped>
 a {
-    
+
     text-decoration: none
 }
 [class*="__container"] {
@@ -186,11 +186,11 @@ a {
 }
 section{
     display: block;
-    
+
 }
 
 .navigation{
-    
+
     width: 72px;
     height: 20px;
     font-family: 'Inter';
@@ -199,7 +199,7 @@ section{
     font-size: 14px;
     line-height: 140%;
     color: #FFFFFF;
-    
+
 
 }
 .nav{
@@ -216,7 +216,7 @@ section{
 
     color: #FFF;
 }
-.main{  
+.main{
     width: 100%;
 }
 .course-page{
@@ -233,7 +233,7 @@ section{
 }
 .name-academy{
     display: flex;
-    
+
     padding: 100px 0px 20px 0px;
 }
 .logo{
@@ -304,6 +304,7 @@ section{
     color: #FFFFFF;
     z-index: 499;
     cursor: pointer;
+    outline: none;
 }
 .button:hover{
         background: linear-gradient(90deg,#ea1414,#7004a7);
@@ -327,9 +328,10 @@ section{
 .what-learn__content{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 ul{
-    list-style-type:none;    
+    list-style-type:none;
 }
 .block-learn__title{
     font-family: 'Inter';
@@ -456,7 +458,7 @@ ul{
     font-weight: 400;
     font-size: 20px;
     line-height: 34px;
-    
+
 }
 
 // .footer{
@@ -514,7 +516,7 @@ ul{
 .footer_content {
     display: flex;
     flex-wrap: wrap;
-    
+
     gap: 108px;
 }
 .footer_content_colum {
@@ -528,7 +530,7 @@ h3{
     font-size: 18px;
     line-height: 32px;
     margin-bottom: 24px;
-    
+
 }
 h3 a{
     color: #000000;
@@ -563,7 +565,7 @@ h3 a{
 .footer_contacts_content_social {
     display: flex;
     gap: 24px;
-    
+
 }
 .contacts {
 }
@@ -571,7 +573,7 @@ h3 a{
     .footer_content{
         gap: 40px;
         margin-bottom: 313px;
-        
+
     }
     .block-learn__list{
         gap: 70px;
@@ -579,7 +581,7 @@ h3 a{
     .list{
         font-weight: 400;
         font-size: 16px;
-        line-height: 140%; 
+        line-height: 140%;
         width: 280px;
     }
     .footer_contacts_content{
@@ -589,7 +591,7 @@ h3 a{
     .footer_contacts_content_social{
         margin-bottom: 29px;
     }
-    
+
 }
 @media(max-width:1050px){
     h2{
@@ -597,7 +599,7 @@ h3 a{
         line-height: 36px;
         margin-bottom: 30px;
     }
-    
+
 }
 
 
@@ -609,7 +611,7 @@ h3 a{
         flex-direction: column-reverse;
     }
     .what-learn-wraper{
-        
+
     }
     .get-started__image{
         margin-top: -45px;
@@ -643,7 +645,7 @@ h3 a{
     .what-learn{
         margin-top: 50px;
     }
-    
+
 }
 @media (max-width:770px){
     .block-learn__list{
@@ -654,7 +656,7 @@ h3 a{
     .get-started__image img{
         width: 450px;
         height: auto;
-        
+
     }
     .get-started__image{
         margin-top: -50px;
@@ -664,7 +666,7 @@ h3 a{
     .get-started__image img{
         width: 350px;
         height: auto;
-        
+
     }
     .get-started__image{
         margin-top: -50px;
@@ -682,7 +684,7 @@ h3 a{
     .get-started__image img{
         width: 250px;
         height: auto;
-        
+
     }
     .get-started__image{
         margin-top: -50px;
