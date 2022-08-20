@@ -26,16 +26,14 @@
 
             </div>
         </div>
-        <div class="course">
+        <div class="course" v-if="cards.length > 0">
             <div class="conteiner">
                 <h2>Курсы</h2>
                 <SwiperMain :cards="cards"
-                v-if="cards.length > 0"
                 />
-                <h2 v-else  style="color:red;">Курсов нет</h2>
             </div>
         </div>
-        <div class="questions">
+        <div class="questions" v-if="faqs.length > 0">
             <div class="conteiner">
                 <h2>Часто задаваемые вопросы</h2>
                 <faqsList :faqs="faqs" />
@@ -339,7 +337,7 @@ span::after{
     }
     .main_screen_statistics_inform_number{
         font-size: 50px;
-        
+
     }
     .main_screen_statistics_inform_text{
         font-size: 20px;
