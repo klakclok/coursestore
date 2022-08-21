@@ -48,6 +48,9 @@ export default {
     error (fbError) {
       this.$error(messages[fbError.code] || 'Что-то пошло не так!!!')
     }
+  },
+  mounted () {
+    this.$router.push('/admin')
   }
 }
 </script>

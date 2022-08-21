@@ -20,13 +20,15 @@ export default {
   components: {
     EmptyLayout, MainLayout, PageLayout
   },
+  async mounted() {
+    await this.$store.dispatch('getCategories')
+  }
 }
 
 </script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-
 
 *{
     margin: 0px;

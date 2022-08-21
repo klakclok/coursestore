@@ -6,22 +6,34 @@
       </div>
 
       <form @submit.prevent="onSubmit">
+
         <div class="input-field">
-          <input
-              @keyup.enter="onKeyup"
-              id="category-edit"
-              type="text"
-              v-model.trim="course.category"
-              :class="{invalid: !$v.course.category.required && $v.course.category.$dirty}"
-          >
-          <label for="category-edit">Категория</label>
-          <span
-              v-if="!$v.course.category.required && $v.course.category.$dirty"
-              class="helper-text invalid"
-          >
-            Введите категорию
-          </span>
+          <select ref="select" v-model="course.category">
+            <option
+              v-for="category in categories"
+              :key="category.id"
+            >
+              {{ category.title }}
+            </option>
+          </select>
+          <label>Выберите категорию</label>
         </div>
+<!--        <div class="input-field">-->
+<!--          <input-->
+<!--              @keyup.enter="onKeyup"-->
+<!--              id="category-edit"-->
+<!--              type="text"-->
+<!--              v-model.trim="course.category"-->
+<!--              :class="{invalid: !$v.course.category.required && $v.course.category.$dirty}"-->
+<!--          >-->
+<!--          <label for="category-edit">Категория</label>-->
+<!--          <span-->
+<!--              v-if="!$v.course.category.required && $v.course.category.$dirty"-->
+<!--              class="helper-text invalid"-->
+<!--          >-->
+<!--            Введите категорию-->
+<!--          </span>-->
+<!--        </div>-->
 
         <div class="input-field">
           <input
@@ -120,9 +132,13 @@ export default {
       price: 0
     }
   }),
+  computed: {
+    categories() {
+      return this.$store.getters.getCategories
+    }
+  },
   validations: {
     course: {
-      category: {required},
       title: {required},
       description: {required},
       price: {required}
@@ -172,6 +188,7 @@ export default {
     }
   },
   mounted() {
+    M.FormSelect.init(this.$refs.select)
     M.updateTextFields()
   }
 }

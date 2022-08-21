@@ -17,9 +17,6 @@ export default {
     updateCourses(state, courses) {
       state.courses = courses
     },
-    // getCourse (state, course) {
-    //   return state.courses.find(item => item.id === course.id)
-    // },
     createCourseMutation(state, course) {
       state.courses.push(course)
     },
@@ -36,10 +33,11 @@ export default {
     }
   },
   actions: {
-    createCourse({commit}, course) {
+    createCourse({commit, getters}, course) {
+      let catId = getters.getCategories.find(item => item.title === course.category).id
       axios({
-        // url: 'https://8bit.comrades.dev/api/course/insert',
-        url: 'http://academy/api/course/insert',
+        url: 'https://8bit.comrades.dev/api/course/insert',
+        // url: 'http://academy/api/course/insert',
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -47,7 +45,7 @@ export default {
         },
         data: {
           title: course.title,
-          category: course.category,
+          category_id: catId,
           price: course.price,
           description: course.description,
           image: course.img
@@ -60,8 +58,8 @@ export default {
     },
     getCourses({commit}) {
       axios({
-        // url: 'https://8bit.comrades.dev/api/courses',
-        url: 'http://academy/api/courses',
+        url: 'https://8bit.comrades.dev/api/courses',
+        // url: 'http://academy/api/courses',
         method: "GET",
       }).then((response) => {
         commit('updateCourses', response.data)
@@ -71,8 +69,8 @@ export default {
     },
     deleteCourse({commit}, id) {
       axios({
-        // url: `https://8bit.comrades.dev/api/course/delete/${id}`,
-        url: `http://academy/api/course/delete/${id}`,
+        url: `https://8bit.comrades.dev/api/course/delete/${id}`,
+        // url: `http://academy/api/course/delete/${id}`,
         method: 'POST',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -83,11 +81,12 @@ export default {
         console.log(err)
       })
     },
-    editCourse({commit}, course) {
+    editCourse({commit, getters}, course) {
+      let catId = getters.getCategories.find(item => item.title === course.category).id
       console.log(course.img)
       axios({
-        // url: `https://8bit.comrades.dev/api/course/update`,
-        url: `http://academy/api/course/update`,
+        url: `https://8bit.comrades.dev/api/course/update`,
+        // url: `http://academy/api/course/update`,
         method: 'POST',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -96,7 +95,7 @@ export default {
         data: {
           id: course.id,
           title: course.title,
-          category: course.category,
+          category_id: catId,
           price: course.price,
           description: course.description,
           image: course.img

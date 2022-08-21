@@ -5,9 +5,7 @@
     </div>
     <section>
       <div class="row">
-        <CourseCreate
-        :key="courses.length"
-        />
+        <CourseCreate/>
         <CourseEdit
           :value="editingValue"
         />

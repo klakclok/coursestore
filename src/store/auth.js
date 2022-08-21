@@ -22,8 +22,8 @@ export default {
       return new Promise((resolve, reject) => {
         commit('auth_request')
         axios({
-          // url: 'https://8bit.comrades.dev/api/login',
-          url: 'http://academy/api/login',
+          url: 'https://8bit.comrades.dev/api/login',
+          // url: 'http://academy/api/login',
           data: user,
           method: 'POST'
         }).then(resp => {

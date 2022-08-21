@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import mainPage from '@/views/mainPage.vue'
 import store from "@/store";
-import coursePage from '@/views/coursePage'
 Vue.use(VueRouter)
 
 const routes = [
@@ -16,7 +15,7 @@ const routes = [
     path: '/coursePage',
     name: 'coursePage',
     meta: {layout:'page'},
-    component: () => import('@/views/coursePage.vue')
+    component: () => import('@/views/coursePage')
   },
   {
     path: '/login',

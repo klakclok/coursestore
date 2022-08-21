@@ -8,13 +8,14 @@
         @click.stop="$emit('edit', course)"
         class="edit-btn"
     ></div>
-    <span class="course-category">{{ course.category }}</span>
+    <span class="course-category">{{ getCategory }}</span>
     <img
         v-if="course.head_img && course.head_img.img && course.head_img.img.path"
         class="course-image"
         :src="this.$store.getters.getHost + course.head_img.img.path"
         :alt="course.title"
     >
+    <div v-else class="rider-img"></div>
     <h2 class="course-title">{{ course.title }}</h2>
     <p class="course-description">{{ course.description }}</p>
     <p class="course-price">{{ course.price }} <span>руб.</span></p>
@@ -27,6 +28,11 @@ export default {
   props: {
     course: {
       type: Object,
+    }
+  },
+  computed: {
+    getCategory() {
+      return this.$store.getters.getCategories.find(item => item.id === this.course.category_id).title
     }
   }
 }
@@ -41,8 +47,13 @@ export default {
   height: 200px;
   min-height: 200px;
   object-fit: cover;
-  
-  
+}
+
+.rider-img {
+  border-radius: 10px;
+  width: 340px;
+  height: 200px;
+  min-height: 200px;
 }
 
 .delete-btn {

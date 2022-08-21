@@ -19,23 +19,6 @@
           <label>Выберите категорию</label>
         </div>
 
-<!--        <div class="input-field">-->
-<!--          <input-->
-<!--              @keyup.enter="onKeyup"-->
-<!--              id="category-create"-->
-<!--              type="text"-->
-<!--              v-model.trim="course.category"-->
-<!--              :class="{invalid: !$v.course.category.required && $v.course.category.$dirty}"-->
-<!--          >-->
-<!--          <label for="category-create">Категория</label>-->
-<!--          <span-->
-<!--              v-if="!$v.course.category.required && $v.course.category.$dirty"-->
-<!--              class="helper-text invalid"-->
-<!--          >-->
-<!--            Введите категорию-->
-<!--          </span>-->
-<!--        </div>-->
-
         <div class="input-field">
           <input
               @keyup.enter="onKeyup"
@@ -112,19 +95,16 @@
         </button>
       </form>
     </div>
-    {{categories}}
   </div>
 </template>
 
 <script>
 import {required} from 'vuelidate/lib/validators'
-import axios from "axios";
 
 export default {
   name: "CourseCreate",
   data() {
     return {
-      categories: this.$store.getters.getCategories,
       course: {
         category: '',
         title: '',
@@ -134,9 +114,13 @@ export default {
       }
     }
   },
+  computed: {
+    categories() {
+      return this.$store.getters.getCategories
+    }
+  },
   validations: {
     course: {
-      //category: {required},
       title: {required},
       description: {required},
       price: {required}
@@ -180,7 +164,7 @@ export default {
       this.course.img = this.$refs.fileCreate.files[0]
     },
   },
-  mounted() {
+  mounted(){
     M.FormSelect.init(this.$refs.select)
     M.updateTextFields()
   }
