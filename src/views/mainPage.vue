@@ -26,7 +26,7 @@
 
             </div>
         </div>
-        <div class="course" v-if="cards.length > 0">
+        <div class="course" v-if="cards.length !== 0">
             <div class="conteiner">
                 <h2>Курсы</h2>
                 <SwiperMain :cards="cards"

@@ -26,8 +26,8 @@ export default {
   actions: {
     createCategory(commit, category) {
       axios({
-        url: 'https://8bit.comrades.dev/api/category/insert',
-        // url: 'http://academy/api/category/insert',
+        // url: 'https://8bit.comrades.dev/api/category/insert',
+        url: 'http://academy/api/category/insert',
         data: {
           title: category.title,
         },
@@ -44,7 +44,6 @@ export default {
     getCategories({commit}) {
       axios({
         url: 'https://8bit.comrades.dev/api/categories',
-        // url: 'http://academy/api/categories',
         method: "GET"
       }).then((response) => {
         commit('updateCategories', response.data)
@@ -55,7 +54,6 @@ export default {
     deleteCategory({commit}, id) {
       axios({
         url: `https://8bit.comrades.dev/api/category/delete/${id}`,
-        // url: `http://academy/api/category/delete/${id}`,
         method: 'POST',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -69,7 +67,6 @@ export default {
     editCategory({commit}, category) {
       axios({
         url: `https://8bit.comrades.dev/api/category/update`,
-        // url: `http://academy/api/category/update`,
         method: 'POST',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`

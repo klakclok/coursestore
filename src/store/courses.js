@@ -37,7 +37,6 @@ export default {
       let catId = getters.getCategories.find(item => item.title === course.category).id
       axios({
         url: 'https://8bit.comrades.dev/api/course/insert',
-        // url: 'http://academy/api/course/insert',
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -59,7 +58,6 @@ export default {
     getCourses({commit}) {
       axios({
         url: 'https://8bit.comrades.dev/api/courses',
-        // url: 'http://academy/api/courses',
         method: "GET",
       }).then((response) => {
         commit('updateCourses', response.data)
@@ -70,7 +68,6 @@ export default {
     deleteCourse({commit}, id) {
       axios({
         url: `https://8bit.comrades.dev/api/course/delete/${id}`,
-        // url: `http://academy/api/course/delete/${id}`,
         method: 'POST',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -86,7 +83,6 @@ export default {
       console.log(course.img)
       axios({
         url: `https://8bit.comrades.dev/api/course/update`,
-        // url: `http://academy/api/course/update`,
         method: 'POST',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,

@@ -8,7 +8,7 @@
       <form @submit.prevent="onSubmit">
 
         <div class="input-field">
-          <select ref="select" v-model="course.category">
+          <select v-if="categories.length !== 0" ref="select" v-model="course.category">
             <option
               v-for="category in categories"
               :key="category.id"
@@ -100,6 +100,7 @@
 
 <script>
 import {required} from 'vuelidate/lib/validators'
+import axios from 'axios'
 
 export default {
   name: "CourseCreate",

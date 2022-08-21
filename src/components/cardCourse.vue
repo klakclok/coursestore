@@ -4,7 +4,7 @@
 
             <div class="card_content" >
                 <img class="card_content_image"  :src="this.$store.getters.getHost + card.head_img.img.path" :alt="card.title">
-                <span class="card_button" href="">{{card.category}}</span>
+                <span class="card_button" href="">{{getCategory}}</span>
                 <router-link to="/coursePage" class="card_content_title">{{card.title}}</router-link>
                 <p class="card_content_subtitle">{{card.description}}</p>
                 <p class="card_content_price">{{card.price}} <span>&#8381;</span> </p>
@@ -23,7 +23,12 @@
                 type: Object,
                 required: true,
             }
+        },
+      computed: {
+        getCategory() {
+          return this.$store.getters.getCategories.find(item => item.id === this.card.category_id).title
         }
+      }
 
     }
 </script>

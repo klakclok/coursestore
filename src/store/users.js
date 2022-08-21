@@ -18,7 +18,6 @@ export default {
     getUsers({commit}) {
       axios({
         url: `https://8bit.comrades.dev/api/info`,
-        // url: `http://academy/api/info`,
         method: "GET"
       }).then((response) => {
         commit('updateUsers', response.data)
@@ -29,7 +28,6 @@ export default {
     updateUsers({commit}, users) {
       axios({
         url: `https://8bit.comrades.dev/api/info/update`,
-        // url: `http://academy/api/info/update`,
         method: 'POST',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
