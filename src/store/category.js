@@ -27,7 +27,7 @@ export default {
     createCategory(commit, category) {
       axios({
         // url: 'https://8bit.comrades.dev/api/category/insert',
-        url: 'http://academy/api/category/insert',
+        url: 'https://academy/8bit.comrades.dev/category/insert',
         data: {
           title: category.title,
         },
