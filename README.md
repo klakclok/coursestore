@@ -1,24 +1,6 @@
-# coursestore
+# Магазин курсов с админ панелью
 
-## Project setup
-```
-yarn install
-```
+Магазин курсов, с админ панелью и авторизацией, написан на экосистеме vue.
+Так же к нему есть Бэк на laravel(php). 
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Данный пет проект писался на лайте в отпуске, что бы "руки помнили", большинство информации на страницах является динамической и меняется с админки.
